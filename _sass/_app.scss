@@ -1,0 +1,74 @@
+div.site-intro-content {
+	
+	padding:				30px;
+
+	border-radius: 			15px;
+	
+	background:					rgba(1, 1, 1, 0.25);
+	-webkit-backdrop-filter:	blur(30px);
+	backdrop-filter:			blur(30px);
+	
+	max-width: 	800px;
+	
+	color: 		$white;
+	
+	h1 {
+		
+		font-size: 80px;
+		font-weight: 900;
+		
+		padding-bottom: 30px;
+		
+	}
+	
+	p {
+		
+		display: block;
+		
+		font-size: 32px;
+		line-height: 42px;
+		
+		padding: 15px 0;
+		
+		a.link {
+			
+			overflow: hidden;
+			
+			display: inline-block;
+			
+			color: 		$yellow;
+			
+			font-size: 50px;
+			font-weight: 600;
+			line-height: 50px;
+			
+			margin: 15px 0;
+			
+		}
+		
+		a.button {
+
+			display: inline-block;			
+			
+			background: $yellow;
+			color: 	$white;
+			
+			text-decoration: none;
+			
+			font-weight: 900;
+			font-size: 40px;
+			line-height: 40px;
+			
+			padding: 15px 30px;
+			margin-top: 30px;
+			
+			border-radius: 15px;
+			
+		}
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	
+}

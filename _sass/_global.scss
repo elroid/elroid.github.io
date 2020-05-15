@@ -1,0 +1,60 @@
+// Global styles
+
+@at-root {
+	@-ms-viewport { 
+		width: device-width;
+	} // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+*,
+*::before,
+*::after,
+html,
+body {
+	
+	box-sizing: border-box;
+
+	font-family: 			$font-family-sans-serif;
+	font-feature-settings:	$font-feature-settings;
+	font-display:			swap;
+	font-kerning: 			auto;
+	letter-spacing: 		normal;
+
+	max-width: 	100vw;
+	overflow-x: hidden !important;
+
+}
+
+html {
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+
+html,
+body {
+			
+	margin: 				0;
+	padding: 				0;
+	
+	background: 			$body-background;
+	color: 					$body-color;
+
+	box-sizing: 			border-box;
+	
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: 0;
+}
+
+img.header {
+	height: 	100%;
+	width: 		50%;
+	z-index: 	100;
+}
