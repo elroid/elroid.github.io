@@ -2,13 +2,13 @@
 ---
 
 window.onload = function() {
-  loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/1/public/basic?alt=json-in-script&callback=onDataLoaded", getNewData)
+  loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/2/public/basic?alt=json-in-script&callback=onDataLoaded", getNewData)
 };
 
 function getNewData() {
 	setInterval(
 		function(){ 
-			loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/1/public/basic?alt=json-in-script&callback=onDataLoaded")
+			loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/2/public/basic?alt=json-in-script&callback=onDataLoaded")
 			console.log("Updated data");
 		}, 
 	30000);
