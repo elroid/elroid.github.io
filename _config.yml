@@ -5,7 +5,7 @@ title: "Eurovision Scoreboard"
 description: "A digital scoreboard for your Eurovision house party"
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://elroid.github.io/"
+url: "https://elroid.github.io"
 author: "Elliot Long"
 
 # Images and assets
