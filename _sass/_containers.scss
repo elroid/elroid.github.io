@@ -69,15 +69,18 @@ div.grid-entry {
 	.grid-entry--running-order {
 		grid-area:			number;
 		align-self: 		flex-start;
+		overflow: hidden;
 	}
 	.grid-entry--name {
 		grid-area:			country;
 		align-self: 		flex-end;
+		overflow: hidden;
 	}
 	.grid-entry--house-score {
 		grid-area:			score;
 		align-self: 		flex-end;
 		justify-self: 		flex-end;
+		overflow: hidden;
 	}
 }
 
