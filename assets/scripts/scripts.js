@@ -17,8 +17,8 @@ function getNewData() {
 function loadScript(url, callback)
 {
     // Adding the script tag to the head as suggested before
-    var head = document.head;
-    var script = document.createElement('script');
+    let head = document.head;
+    let script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = url;
 
@@ -35,6 +35,7 @@ function loadScript(url, callback)
 var onDataLoaded = (data) => {
 	 
 	{% for entry in site.data.data %}
+	console.log("Looking at "+entry.name);
 	    var {{ entry.Name | remove: " " }} = data.feed.entry.find((entry) => entry.title.$t == '{{ entry.CellReference }}').content.$t
 	    document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = {{ entry.Name | remove: " " }}
 	{% endfor %}
@@ -42,8 +43,8 @@ var onDataLoaded = (data) => {
 }
 
 function toggleViews() {
-	var headerContent = document.getElementById("app-header");
-	var mainContent = document.getElementById("app-main");
+	let headerContent = document.getElementById("app-header");
+	let mainContent = document.getElementById("app-main");
 	
 	headerContent.classList.toggle("show");
 	headerContent.classList.toggle("hide");
