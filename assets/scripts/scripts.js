@@ -35,7 +35,6 @@ function loadScript(url, callback)
 var onDataLoaded = (data) => {
 	 
 	{% for entry in site.data.data %}
-	console.log("Looking at "+entry.name);
 	    var {{ entry.Name | remove: " " }} = data.feed.entry.find((entry) => entry.title.$t == '{{ entry.CellReference }}').content.$t
 	    document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = {{ entry.Name | remove: " " }}
 	{% endfor %}
