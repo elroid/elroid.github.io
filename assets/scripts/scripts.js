@@ -35,8 +35,10 @@ function loadScript(url, callback)
 var onDataLoaded = (data) => {
 	 
 	{% for entry in site.data.data %}
-	    var {{ entry.Name | remove: " " }} = data.feed.entry.find((entry) => entry.title.$t == '{{ entry.CellReference }}').content.$t
-	    document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = {{ entry.Name | remove: " " }}
+	    var {{ entry.Name | remove: " " }}s = data.feed.entry.find((entry) => entry.title.$t == 'G{{ entry.CellReference }}').content.$t;
+	    document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = {{ entry.Name | remove: " " }}s;
+	    var {{ entry.Name | remove: " " }}p = data.feed.entry.find((entry) => entry.title.$t == 'H{{ entry.CellReference }}').content.$t;
+	    document.getElementById('place-{{ entry.Name | remove: " " }}').innerHTML = '#'+{{ entry.Name | remove: " " }}p;
 	{% endfor %}
 
 }

@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/scripts.js' }}"></script>
+
 <!-- The video -->
 <video autoplay muted loop id="myVideo">
     <source src="{{ site.baseurl | append: '/assets/video/esc-loop.m4v' }}" type="video/mp4">
@@ -21,7 +23,7 @@ Text
 
         <div class="grid-entry">
 
-            <span class="grid-entry--running-order">#{{ entry.RunningOrder }}</span>
+            <span id="place-{{ entry.Name | remove: " " }}" class="grid-entry--running-order">#?</span>
             <span class="grid-entry--name">{{ entry.Name }}</span>
             <span id="entry-{{ entry.Name | remove: " " }}" class="grid-entry--house-score"></span>
 
