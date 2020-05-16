@@ -47,7 +47,7 @@ markdown: kramdown
 future: false
 sass:
     sass_dir: _sass
-    sourcemap: true
+    #sourcemap: true
     
 
 plugins:
