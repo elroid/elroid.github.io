@@ -1,4 +1,4 @@
 ---
-layout: app
+layout: intro
 ---
 

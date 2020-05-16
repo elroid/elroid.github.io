@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+    <source src="{{ site.baseurl | append: '/assets/video/esc-loop.m4v' }}" type="video/mp4">
+</video>
+
+<main id="app-main" class="container">
+
+    <section id="grid" class="container">
+
+        <header class="grid-header" style="overflow: hidden">
+
+            <img class="header" src="{{ site.baseurl | append: '/assets/images/site/header.svg' }}">
+Text
+        </header>
+
+        {% for entry in site.data.data %}
+
+        <div class="grid-entry">
+
+            <span class="grid-entry--running-order">#{{ entry.RunningOrder }}</span>
+            <span class="grid-entry--name">{{ entry.Name }}</span>
+            <span id="entry-{{ entry.Name | remove: " " }}" class="grid-entry--house-score"></span>
+
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+</main>
