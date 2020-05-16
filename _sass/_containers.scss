@@ -5,7 +5,7 @@ header.site-intro {
 	display: grid;
 	position: absolute;
 	
-	min-height: 80vh;
+	min-height: 100vh;
 	
 	padding: 0 200px;
 	
@@ -47,6 +47,8 @@ section#grid {
 	width: 	100%;
 	
 	overflow: hidden;
+
+	//transform: scale(1.0, 0.7);
 }
 
 div.grid-entry {
