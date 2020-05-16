@@ -89,7 +89,7 @@ section#gridAll {
 
 @media screen and (max-width: 930px) {
 	section#gridAll {
-		background: orange;
+		//background: orange;
 		grid-template-columns:	repeat(3, 1fr);
 		grid-template-rows: 	repeat(7, 1fr);
 	}
@@ -97,7 +97,7 @@ section#gridAll {
 
 @media screen and (max-width:650px) {
 	section#gridAll {
-		background: red;
+		//background: red;
 		grid-template-columns:	repeat(2, 1fr);
 		grid-template-rows: 	repeat(10, 1fr);
 	}
@@ -120,6 +120,44 @@ div.grid-entry {
 	-webkit-backdrop-filter:	blur(30px);
 	backdrop-filter:			blur(30px);
 	
+	.grid-entry--running-order {
+		grid-area:			number;
+		align-self: 		flex-start;
+		overflow: hidden;
+	}
+	.grid-entry--name {
+		grid-area:			country;
+		align-self: 		flex-end;
+		overflow: hidden;
+		overflow-wrap: break-word;
+	}
+	.grid-entry--house-score {
+		grid-area:			score;
+		align-self: 		flex-end;
+		justify-self: 		flex-end;
+		overflow: hidden;
+	}
+}
+
+div.gridAll-entry {
+
+	display: 	grid;
+
+	grid-template-rows: 	1fr 1fr;
+	grid-template-columns: 	4fr 1fr;
+
+	grid-template-areas: 	"number score"
+	"country score";
+
+	padding:				5px;
+	min-width:200px;
+	border-radius: 			15px;
+	max-height:400px;
+
+	background:					rgba(1, 1, 1, 0.25);
+	-webkit-backdrop-filter:	blur(30px);
+	backdrop-filter:			blur(30px);
+
 	.grid-entry--running-order {
 		grid-area:			number;
 		align-self: 		flex-start;
