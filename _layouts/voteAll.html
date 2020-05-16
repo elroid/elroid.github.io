@@ -5,24 +5,26 @@ layout: default
 <script type="text/javascript" src="{{ site.url | append: site.baseurl | append: site.js-path | append: '/scripts.js' }}"></script>
 <script type="text/javascript">
     window.onload = function() {
-        loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/1/public/basic?alt=json-in-script&callback=onDataLoaded", getNewData)
+        loadScript("https://spreadsheets.google.com/feeds/cells/1W1DIQFOD-YSPzaZHvX0ct1TqI6j0E4AqGtyy0XUBHH8/1/public/basic?alt=json-in-script&callback=onDataLoaded", getNewData)
     };
 
     function getNewData() {
         setInterval(
             function(){
-                loadScript("https://spreadsheets.google.com/feeds/cells/1t_KW6vAutrpn-xr2lMkbNUljrfRRwg_QUKA1trptLxM/1/public/basic?alt=json-in-script&callback=onDataLoaded")
+                loadScript("https://spreadsheets.google.com/feeds/cells/1W1DIQFOD-YSPzaZHvX0ct1TqI6j0E4AqGtyy0XUBHH8/1/public/basic?alt=json-in-script&callback=onDataLoaded")
                 console.log("Updated data");
             },
             30000);
     }
+    var i=0;
     var onDataLoaded = (data) => {
 
-        {% for entry in site.data.data %}
-        var {{ entry.Name | remove: " " }}s = data.feed.entry.find((entry) => entry.title.$t == 'G{{ entry.CellReference }}').content.$t;
-        document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = {{ entry.Name | remove: " " }}s;
-        var {{ entry.Name | remove: " " }}p = data.feed.entry.find((entry) => entry.title.$t == 'H{{ entry.CellReference }}').content.$t;
-        document.getElementById('place-{{ entry.Name | remove: " " }}').innerHTML = '#'+{{ entry.Name | remove: " " }}p;
+        {% for entry in site.data.dataAll %}
+        var s{{ entry.RunningOrder }} = data.feed.entry.find((entry) => entry.title.$t == 'G{{ entry.CellReference }}').content.$t;
+        document.getElementById('entry-{{ entry.Name | remove: " " }}').innerHTML = s{{ entry.RunningOrder }};
+        var p{{ entry.RunningOrder }} = data.feed.entry.find((entry) => entry.title.$t == 'H{{ entry.CellReference }}').content.$t;
+        document.getElementById('place-{{ entry.Name | remove: " " }}').innerHTML = '#'+p{{ entry.RunningOrder }};
+        i++;
         {% endfor %}
 
     }
@@ -34,15 +36,15 @@ layout: default
 
 <main id="app-main" class="container">
 
-    <section id="grid" class="container">
+    <section id="gridAll" class="container">
 
         <header class="grid-header" style="overflow: hidden">
 
             <img class="header" src="{{ site.baseurl | append: '/assets/images/site/header.svg' }}">
-Text
+
         </header>
 
-        {% for entry in site.data.data %}
+        {% for entry in site.data.dataAll %}
 
         <div class="grid-entry">
 
